@@ -1,9 +1,9 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
-
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+    val nestedList = listOf(1, 2, listOf(3, 4, listOf(5, 6)), 7, listOf(8, 9))
+    val nested = Nested<Int>(nestedList)
+    for (item in nested) {
+        println(item)
+    }
 }
 
 class Nested<T>(private val list: List<Any?>) : Iterable<T> {
